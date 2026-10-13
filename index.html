@@ -1,181 +1,39 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ESV Ingolstadt Volleyball</title>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
-<link rel="icon" href="/files/public/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://api.volleyball-bayern.de">
-<link rel="stylesheet" href="https://api.volleyball-bayern.de/jsi/vapi.css?v=1">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESV Ingolstadt Volleyball</title>
+  <link rel="icon" href="/files/public/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://api.volleyball-bayern.de">
+  <link rel="stylesheet" href="https://api.volleyball-bayern.de/jsi/vapi.css?v=1">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/tiles.css">
+  <link rel="stylesheet" href="css/data.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <script type="module" src="js/main.js"></script>
 </head>
 <body>
-<nav>
-  <ul>
-	<li>
-	 <a href="https://volleyball.esv-ingolstadt.de/"><div class="imagelogo"></div></a>
-	</li>
-	<li>
-	<a href="https://www.instagram.com/esv.volleyball"><div class="imagelogoinstagram"></div></a>
-	</li>
- </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="https://volleyball.esv-ingolstadt.de/"><div class="imagelogo"></div></a></li>
+      <li><a href="https://www.instagram.com/esv.volleyball"><div class="imagelogoinstagram"></div></a></li>
+    </ul>
+  </nav>
 
-<div class="imgbox">
- <img class="center-fit" src='/files/public/esv_logo.svg'>
-<p>&nbsp;</p>
-<center>
-<div class="tiles">
-<section class="tile herren">
-<h2>Herren 1</h2>
-<h3>Bezirksklasse 1 Männer</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="4b09745a-8a2a-4323-bfbd-f6bb600eb2d6" data-typ="spiele" data-vapi-teams="[1676f1ba-b97a-4583-8c77-56898979a1f6]" data-vapi-teamfilter="[1676f1ba-b97a-4583-8c77-56898979a1f6]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="4b09745a-8a2a-4323-bfbd-f6bb600eb2d6" data-typ="tabelle" data-vapi-teams="[1676f1ba-b97a-4583-8c77-56898979a1f6]"></div>
-<h3>Kreispokal OBB-Nord Männer</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="5bf9b56a-b508-4c1d-b4ec-e8b7cc3e1617" data-typ="spiele" data-vapi-teams="[60799450-149e-4f74-8098-ca17fe66c354]" data-vapi-teamfilter="[60799450-149e-4f74-8098-ca17fe66c354]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-</section>
-<section class="tile damen">
-<h2>Damen 1<small>SG ESV Ingolstadt / TSV Kösching</small></h2>
-<h3>Bezirksklasse 1 Frauen</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="d14a83b4-3109-4be5-835b-e56282234a5b" data-typ="spiele" data-vapi-teams="[8ef5d0c8-a5ac-486b-ac9e-a262f38de1c4]" data-vapi-teamfilter="[8ef5d0c8-a5ac-486b-ac9e-a262f38de1c4]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="d14a83b4-3109-4be5-835b-e56282234a5b" data-typ="tabelle" data-vapi-teams="[8ef5d0c8-a5ac-486b-ac9e-a262f38de1c4]"></div>
-<h3>Kreispokal OBB-Nord Frauen</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="554ebdfe-d89c-4961-976f-8cf5aa03c136" data-typ="spiele" data-vapi-teams="[e095241b-c96e-45b2-9255-e2fb2e1b701c]" data-vapi-teamfilter="[e095241b-c96e-45b2-9255-e2fb2e1b701c]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-</section>
-<section class="tile herren">
-<h2>Herren 2</h2>
-<h3>Kreisliga 1 Männer</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="dcbdb943-fdc7-4ea8-bab9-560c21b07f38" data-typ="spiele" data-vapi-teams="[ac57a0c8-6024-4908-aabd-ebb40e0188f0]" data-vapi-teamfilter="[ac57a0c8-6024-4908-aabd-ebb40e0188f0]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="dcbdb943-fdc7-4ea8-bab9-560c21b07f38" data-typ="tabelle" data-vapi-teams="[ac57a0c8-6024-4908-aabd-ebb40e0188f0]"></div>
-<h3>Kreispokal OBB-Nord Männer</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="5bf9b56a-b508-4c1d-b4ec-e8b7cc3e1617" data-typ="spiele" data-vapi-teams="[c9905e30-d697-4fef-a8e6-0b5ef25f6d88]" data-vapi-teamfilter="[c9905e30-d697-4fef-a8e6-0b5ef25f6d88]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-</section>
-<section class="tile damen">
-<h2>Damen 2</h2>
-<h3>Kreisliga 1 Frauen</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="6cfadf91-0e4f-4500-a1d4-c2cb98450a0b" data-typ="spiele" data-vapi-teams="[8552d90e-8e8e-4625-b41e-41a6843dd117]" data-vapi-teamfilter="[8552d90e-8e8e-4625-b41e-41a6843dd117]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="6cfadf91-0e4f-4500-a1d4-c2cb98450a0b" data-typ="tabelle" data-vapi-teams="[8552d90e-8e8e-4625-b41e-41a6843dd117]"></div>
-</section>
-<section class="tile damen">
-<h2>Damen 3</h2>
-<h3>Kreisklasse 1 Frauen</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="c27621a8-c32b-455b-9c9a-6f8e1183de5a" data-typ="spiele" data-vapi-teams="[3ebf3c16-2109-4360-b71a-efb3a100310d]" data-vapi-teamfilter="[3ebf3c16-2109-4360-b71a-efb3a100310d]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="c27621a8-c32b-455b-9c9a-6f8e1183de5a" data-typ="tabelle" data-vapi-teams="[3ebf3c16-2109-4360-b71a-efb3a100310d]"></div>
-</section>
-<section class="tile mixed">
-<h2>Mixed</h2>
-<h3>2A Liga Nord Mixed</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="0663df69-91d4-459d-bfcf-df7070d23aaa" data-typ="spiele" data-vapi-teams="[d320a317-e56d-4790-9363-2e1caf17cc7b]" data-vapi-teamfilter="[d320a317-e56d-4790-9363-2e1caf17cc7b]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="0663df69-91d4-459d-bfcf-df7070d23aaa" data-typ="tabelle" data-vapi-teams="[d320a317-e56d-4790-9363-2e1caf17cc7b]"></div>
-</section>
-<section class="tile jugend">
-<h2>U20 weiblich</h2>
-<h3>U20 Kreisliga 1 weiblich</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="61e7b98e-afe2-4ae1-91d7-0c7475f58089" data-typ="spiele" data-vapi-teams="[02a59e1a-bcf7-4e1c-8db6-7f053b5bf188]" data-vapi-teamfilter="[02a59e1a-bcf7-4e1c-8db6-7f053b5bf188]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="61e7b98e-afe2-4ae1-91d7-0c7475f58089" data-typ="tabelle" data-vapi-teams="[02a59e1a-bcf7-4e1c-8db6-7f053b5bf188]"></div>
-</section>
-<section class="tile jugend">
-<h2>U18 weiblich</h2>
-<h3>U18 Kreisliga 1 weiblich</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="635a5953-0832-4c86-bac6-43a1ce55bc1d" data-typ="spiele" data-vapi-teams="[3f2b28d4-287c-44e5-ac8a-1f404e27c3f3]" data-vapi-teamfilter="[3f2b28d4-287c-44e5-ac8a-1f404e27c3f3]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="635a5953-0832-4c86-bac6-43a1ce55bc1d" data-typ="tabelle" data-vapi-teams="[3f2b28d4-287c-44e5-ac8a-1f404e27c3f3]"></div>
-</section>
-<section class="tile jugend">
-<h2>U18 männlich</h2>
-<h3>U18 Kreisliga 1 männlich</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="811f8864-166e-49ef-8246-e6607b936e63" data-typ="spiele" data-vapi-teams="[165b7388-172b-47d2-99bc-48833af37cd6]" data-vapi-teamfilter="[165b7388-172b-47d2-99bc-48833af37cd6]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="811f8864-166e-49ef-8246-e6607b936e63" data-typ="tabelle" data-vapi-teams="[165b7388-172b-47d2-99bc-48833af37cd6]"></div>
-</section>
-<section class="tile jugend">
-<h2>U16 weiblich</h2>
-<h3>U16 Kreisliga 1 weiblich</h3>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="763e820d-65c3-40b7-9674-81e76f34b4f7" data-typ="spiele" data-vapi-teams="[44a5e89c-503d-4766-8573-cf77f6d1c904]" data-vapi-teamfilter="[44a5e89c-503d-4766-8573-cf77f6d1c904]" data-vapi-heimspielkennzeichen="  &#127968;"></div>
-<div class="vapi" data-callback="vapiDone" data-wettbewerb="763e820d-65c3-40b7-9674-81e76f34b4f7" data-typ="tabelle" data-vapi-teams="[44a5e89c-503d-4766-8573-cf77f6d1c904]"></div>
-</section>
-</div>
-</center>
-</div>
+  <main class="imgbox">
+    <img class="center-fit" src="/files/public/esv_logo.svg" alt="ESV Ingolstadt Volleyball">
+    <div id="tiles" class="tiles"></div>
+  </main>
 
-<footer class="site-footer">
-  <a href="https://volleyball.esv-ingolstadt.de/" target="_blank" rel="noopener">ESV Ingolstadt Volleyball</a>
-  <span aria-hidden="true">&middot;</span>
-  <a href="https://esv-ingolstadt.de/impressum" target="_blank" rel="noopener">Impressum</a>
-  <span aria-hidden="true">&middot;</span>
-  <a href="https://esv-ingolstadt.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutzerkl&auml;rung</a>
-</footer>
-
-<script>
-// Teamnamen kuerzen, damit Zeilen nicht umbrechen
-var DAMEN1_NAME = "ESV Ingolstadt/K\u00f6sching";
-// erkennt jede Schreibweise; alles dahinter (z. B. Heimspiel-Haus) bleibt erhalten
-var DAMEN1_RE = /(SG\s+)?ESV\s+Ingolstadt\s*[\/-]\s*(TSV\s+)?K\u00f6sching/i;
-function vapiDone(el) {
-  el.querySelectorAll("td").forEach(function (td) {
-    if (td.children.length === 0 && DAMEN1_RE.test(td.textContent)) {
-      td.textContent = td.textContent.replace(DAMEN1_RE, DAMEN1_NAME);
-    }
-  });
-}
-</script>
-<script>
-// Eigener Lader: startet die Abfrage sofort (volley.js braucht allein ~5 s zum Laden),
-// holt alle Bloecke in EINEM Request.
-(function () {
-  var KEY = "a2082634-7373-4ac3-844b-3cfc2d68cab3";
-  var URL = "https://api.volleyball-bayern.de/jsi/data.json.php";
-  var els = Array.prototype.slice.call(document.querySelectorAll(".vapi"));
-  if (!els.length) return;
-
-  var subs = els.map(function (e) {
-    var c = { w: e.getAttribute("data-wettbewerb"), type: e.getAttribute("data-typ") };
-    Array.prototype.forEach.call(e.attributes, function (a) {
-      if (a.name.indexOf("data-vapi-") !== 0) return;
-      var v = a.value;
-      c[a.name.slice(10)] = (v.charAt(0) === "[" && v.slice(-1) === "]") ? v.slice(1, -1).split(";") : v;
-    });
-    return c;
-  });
-
-  function render(contents) {
-    els.forEach(function (e, i) {
-      if (contents[i] == null) return;
-      e.classList.remove("vapi-failed");
-      e.innerHTML = contents[i];
-      e.classList.add("vapiclass");
-      if (typeof vapiDone === "function") vapiDone(e);
-    });
-  }
-
-  // Daten holen
-  function fallback() {
-    var s = document.createElement("script");
-    s.src = "https://api.volleyball-bayern.de/jsi/volley.js.php?key=" + KEY;
-    document.body.appendChild(s);
-  }
-  function fail() {
-    els.forEach(function (e) {
-      if (e.classList.contains("vapiclass")) return;
-      e.classList.add("vapi-failed");
-      e.textContent = "Daten konnten nicht geladen werden.";
-    });
-  }
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", URL, true);
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.timeout = 30000;
-  xhr.onload = function () {
-    try {
-      var d = JSON.parse(xhr.responseText);
-      var contents = d.subs.map(function (x) { return x.content; });
-      render(contents);
-    } catch (err) { fail(); }
-  };
-  xhr.onerror = xhr.ontimeout = fail;
-  xhr.send("data=" + encodeURIComponent(JSON.stringify({
-    multimode: 1, key: KEY, version: "2.4.0", subs: subs
-  })));
-})();
-</script>
+  <footer class="site-footer">
+    <a href="https://volleyball.esv-ingolstadt.de/" target="_blank" rel="noopener">ESV Ingolstadt Volleyball</a>
+    <span aria-hidden="true">&middot;</span>
+    <a href="https://esv-ingolstadt.de/impressum" target="_blank" rel="noopener">Impressum</a>
+    <span aria-hidden="true">&middot;</span>
+    <a href="https://esv-ingolstadt.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutzerkl&auml;rung</a>
+  </footer>
 </body>
 </html>

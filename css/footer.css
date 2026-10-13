@@ -1,0 +1,11 @@
+/* ---- Footer ---- */
+.site-footer {
+  text-align: center;
+  padding: 24px 16px 32px;
+  color: #777;
+  font-size: .95em;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 1em;
+}
+.site-footer a { color: #555; text-decoration: none; margin: 0 .6em; }
+.site-footer a:hover { text-decoration: underline; }
