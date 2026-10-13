@@ -11,6 +11,10 @@ export const API = {
 // Zeitraum fuer "Naechste Spiele" (Tage ab heute).
 export const UPCOMING_DAYS = 10;
 
+// Seite pro Spiel auf volleyball.bayern. Die Spiel-ID kommt aus der API (data-vapi-spielid);
+// der Pfad davor (Kategorie/Bezirk) ist fuer die Anzeige egal, die Seite findet das Spiel ueber die ID.
+export const GAME_URL = "https://volleyball.bayern/ergebnisse/erwachsene/oberbayern/spiel-";
+
 // Wird bei Heimspielen hinter den Teamnamen gesetzt.
 export const HOME_MARKER = "  \u{1F3E0}";
 

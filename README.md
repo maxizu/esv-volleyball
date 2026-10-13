@@ -16,7 +16,7 @@ js/
   main.js           Ablauf: Kacheln bauen, Daten holen, einsetzen
   render.js         Baut die Kacheln aus der Konfiguration
   api.js            Ein gebündelter Request an die BVV-Schnittstelle
-  names.js          Vereinheitlicht Teamnamen (z. B. Damen 1)
+  names.js          Teamnamen vereinheitlichen, Ergebnisse ohne Satzklammer
 files/public/       Logo, Favicon, Instagram-Icon
 ```
 

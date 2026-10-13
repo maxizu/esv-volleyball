@@ -1,7 +1,7 @@
 // "Naechste Spiele": liest die bereits geladenen Spielplaene aus (kein zusaetzlicher Request)
 // und listet alle Spiele der naechsten Tage.
 
-import { UPCOMING_DAYS, HOME_MARKER } from "./config.js";
+import { UPCOMING_DAYS, HOME_MARKER, GAME_URL } from "./config.js";
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -43,6 +43,7 @@ export function collectUpcoming(blocks, now = new Date()) {
       const a = cell("teama");
       const b = cell("teamb");
       games.push({
+        id: row.getAttribute("data-vapi-spielid"),
         date,
         tile,
         competition: competition.name,
@@ -83,7 +84,14 @@ export function renderUpcoming(container, games) {
 
   for (const g of games) {
     const item = el("li", "match " + g.tile.group);
-    item.title = g.competition;
+    // Ganze Zeile ist ein Link zur Spielseite (nur wenn die API eine Spiel-ID liefert)
+    const row = g.id ? el("a", "row") : el("span", "row");
+    if (g.id) {
+      row.href = GAME_URL + g.id;
+      row.target = "_blank";
+      row.rel = "noopener";
+    }
+    row.title = g.competition;
 
     const when = el("span", "when");
     when.append(el("strong", null, dateFmt.format(g.date)), " " + (g.date.hasTime ? timeFmt.format(g.date) : "--:--"));
@@ -93,7 +101,8 @@ export function renderUpcoming(container, games) {
     if (g.home) teams.append(el("span", "home", " \u{1F3E0}"));
     teams.append(el("span", "vs", " \u2013 "), teamSpan(g.teamB, g.ownB));
 
-    item.append(when, el("span", "label", g.tile.title), teams);
+    row.append(when, el("span", "label", g.tile.title), teams);
+    item.append(row);
     container.append(item);
   }
 }

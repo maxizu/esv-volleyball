@@ -1,7 +1,8 @@
 import { TILES } from "./config.js";
 import { renderTiles } from "./render.js";
 import { fetchBlocks } from "./api.js";
-import { normalizeNames } from "./names.js";
+import { normalizeNames, trimResults } from "./names.js";
+import { linkGames } from "./links.js";
 import { collectUpcoming, renderUpcoming, renderUpcomingFailure } from "./upcoming.js";
 
 const { blocks } = renderTiles(document.getElementById("tiles"), TILES);
@@ -23,6 +24,8 @@ try {
     node.innerHTML = contents[i];
     node.classList.add("vapiclass"); // Klasse, auf die vapi.css und data.css zielen
     normalizeNames(node);
+    trimResults(node);
+    linkGames(node);
   });
   renderUpcoming(upcomingEl, collectUpcoming(blocks));
 } catch (err) {

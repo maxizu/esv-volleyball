@@ -19,3 +19,10 @@ export function normalizeNames(root) {
     }
   });
 }
+
+// Entfernt die Satzergebnisse in Klammern: "3:2 (22,-16,15,-21,11)" -> "3:2"
+export function trimResults(root) {
+  root.querySelectorAll("td.ergebnis").forEach((td) => {
+    td.textContent = td.textContent.replace(/\s*\(.*\)\s*$/, "");
+  });
+}
