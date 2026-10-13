@@ -9,7 +9,7 @@ export const API = {
 };
 
 // Zeitraum fuer "Naechste Spiele" (Tage ab heute).
-export const UPCOMING_DAYS = 14;
+export const UPCOMING_DAYS = 10;
 
 // Wird bei Heimspielen hinter den Teamnamen gesetzt.
 export const HOME_MARKER = "  \u{1F3E0}";
