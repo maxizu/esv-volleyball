@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://api.volleyball-bayern.de/jsi/vapi.css?v=1">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/tiles.css">
+  <link rel="stylesheet" href="css/upcoming.css">
   <link rel="stylesheet" href="css/data.css">
   <link rel="stylesheet" href="css/footer.css">
 
@@ -23,8 +24,16 @@
     </ul>
   </nav>
 
-  <main class="imgbox">
-    <img class="center-fit" src="/files/public/esv_logo.svg" alt="ESV Ingolstadt Volleyball">
+  <header class="hero">
+    <img src="/files/public/esv_logo.svg" alt="ESV Ingolstadt Volleyball">
+  </header>
+
+  <main>
+    <section class="upcoming" aria-labelledby="upcoming-title">
+      <h2 id="upcoming-title">N&auml;chste Spiele</h2>
+      <ul id="upcoming-list" class="loading"></ul>
+    </section>
+
     <div id="tiles" class="tiles"></div>
   </main>
 

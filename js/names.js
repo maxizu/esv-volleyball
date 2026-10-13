@@ -5,7 +5,7 @@ const RULES = [
   {
     // SG ESV Ingolstadt / TSV Kösching, in jeder Schreibweise
     pattern: /(SG\s+)?ESV\s+Ingolstadt\s*[/-]\s*(TSV\s+)?K\u00f6sching/i,
-    replacement: "ESV Ingolstadt/K\u00f6sching",
+    replacement: "ESV Ingolstadt",
   },
 ];
 

@@ -56,7 +56,7 @@ Mannschaften stehen in `js/config.js`:
 - Wettbewerbs- und Team-IDs stehen im BVV-Portal unter Vereinsverwaltung, Vereinshomepage, Hallenergebnisse.
 - Neue Saison: IDs in `js/config.js` austauschen.
 
-Teamnamen werden in `js/names.js` vereinheitlicht (Damen 1: "ESV Ingolstadt/Kösching").
+Teamnamen werden in `js/names.js` vereinheitlicht (Damen 1: "ESV Ingolstadt").
 
 ## API-Key und Domain
 

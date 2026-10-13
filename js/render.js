@@ -10,13 +10,13 @@ function el(tag, className, text) {
 }
 
 /** Ein Datenblock (Skeleton, bis die Daten da sind) mit seiner Abfrage. */
-function block(query) {
+function block(query, tile, competition) {
   const node = el("div", "vapi");
-  return { node, query };
+  return { node, query, tile, competition };
 }
 
 /**
- * @returns {{blocks: {node: HTMLElement, query: object}[]}}
+ * @returns {{blocks: {node: HTMLElement, query: object, tile: object, competition: object}[]}}
  */
 export function renderTiles(container, tiles) {
   const blocks = [];
@@ -37,7 +37,7 @@ export function renderTiles(container, tiles) {
       if (c.tabelle) queries.push({ ...base, type: "tabelle" });
 
       for (const q of queries) {
-        const b = block(q);
+        const b = block(q, tile, c);
         blocks.push(b);
         section.append(b.node);
       }

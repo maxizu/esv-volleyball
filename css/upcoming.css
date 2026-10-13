@@ -1,0 +1,53 @@
+/* ---- Naechste Spiele: kompakte Liste, eine Zeile pro Spiel ---- */
+.upcoming {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto 28px;
+}
+.upcoming h2 { font-size: 1.3em; margin-bottom: .4em; }
+.upcoming ul {
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: .88em;
+}
+
+.match {
+  --accent: #555;
+  display: grid;
+  grid-template-columns: 9.5em 6.5em minmax(0, 1fr);
+  align-items: center;
+  column-gap: 10px;
+  padding: 3px 10px 3px 8px;
+  border-left: 4px solid var(--accent);
+  border-bottom: 1px solid #eee;
+  line-height: 1.5;
+}
+.match:last-child { border-bottom: 0; }
+.match:nth-child(even) { background: #f7f7f9; }
+.match.herren { --accent: #1f5fa8; }
+.match.damen  { --accent: #c2185b; }
+.match.mixed  { --accent: #e68a00; }
+.match.jugend { --accent: #2e8b57; }
+
+.match .when { white-space: nowrap; font-variant-numeric: tabular-nums; color: #555; }
+.match .when strong { color: #222; }
+.match .label { color: var(--accent); font-weight: 700; white-space: nowrap; }
+.match .teams { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.match .teams .own { font-weight: 700; }
+
+.upcoming-empty { color: #666; padding: 8px 10px; }
+
+/* Skeleton, solange die Daten laden */
+.upcoming ul.loading { min-height: 120px; background: linear-gradient(90deg, #eceff3 0, #f7f8fa 50%, #eceff3 100%) 0 0 / 200% 100%; animation: upcoming-skeleton 1.3s ease-in-out infinite; }
+@keyframes upcoming-skeleton { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .upcoming ul.loading { animation: none; } }
+
+@media (max-width: 700px) {
+  .upcoming { width: 100%; padding: 0 10px; box-sizing: border-box; }
+  .match { grid-template-columns: auto 1fr; row-gap: 0; padding: 2px 8px; line-height: 1.35; }
+  .match .teams { grid-column: 1 / -1; }
+  .match .label { text-align: right; }
+}

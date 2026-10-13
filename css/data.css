@@ -45,3 +45,13 @@
 .tile .vapi-failed { color: #a33; font-size: .9em; padding: 8px 0; }
 .tile .vapiclass td.team { white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .tile .vapi:not(.vapiclass) { animation: none; } }
+
+/* ---- Mobil: Tabellen kompakter, Namen duerfen umbrechen, sonst seitlich scrollen ---- */
+.tile .vapi { overflow-x: auto; }
+@media (max-width: 700px) {
+  .tile .vapiclass table { font-size: .78em; }
+  .tile .vapiclass th, .tile .vapiclass td { padding: 5px 4px; }
+  .tile .vapiclass td.team { white-space: normal; }
+  .tile .vapiclass td.ergebnis { white-space: normal; min-width: 5.5em; }
+  .tile .vapiclass td.datum { white-space: nowrap; }
+}

@@ -2,15 +2,17 @@
             margin: 0;
 		   padding: 0;
         }
-        .imgbox {
-            display: grid;
-            height: 100%;
-        }
-        .center-fit {
-            max-width: 100%;
-            max-height: 100vh;
-            margin: auto;
-        }
+.hero {
+  height: 50vh;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.hero img { max-height: 100%; max-width: 100%; width: auto; height: auto; }
+main { display: block; }
 nav{
   position: fixed;
   width: 50px;
@@ -75,4 +77,22 @@ border-radius: 10px;
 
 .imagelogoinstagram:hover {
 background-color: lightgrey;
+}
+
+/* ---- Mobil ---- */
+@media (max-width: 700px) {
+  /* Navigation nicht mehr ueber dem Inhalt schweben lassen, sondern als Leiste oben */
+  nav {
+    position: static;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 0;
+  }
+  nav ul { display: flex; gap: 12px; align-items: center; }
+  nav li { height: auto; padding: 4px; }
+  nav li a { height: auto; }
+  .imagelogo, .imagelogoinstagram { float: none; width: 44px; height: 44px; padding: 0; background-size: contain; background-repeat: no-repeat; background-position: center; }
+  .hero { height: auto; min-height: 0; padding: 8px 16px 16px; }
+  .hero img { max-height: 160px; }
 }
