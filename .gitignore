@@ -1,2 +1,5 @@
 .idea/
 .DS_Store
+data/bvv.json
+data/.update.lock
+data/bvv.json.tmp

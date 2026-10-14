@@ -1,5 +1,5 @@
-// Abfragen an die BVV-Schnittstelle. Reines JS ohne Browser-Zugriff,
-// wird von der Seite UND vom GitHub-Action-Skript benutzt (gleiche Abfragen = gleiche Schluessel).
+// Abfragen an die BVV-Schnittstelle. cron/update-data.php baut dieselben Abfragen
+// (gleiche Reihenfolge der Felder spielt keine Rolle, entscheidend ist der Schluessel unten).
 
 import { HOME_MARKER } from "./config.js";
 
@@ -11,10 +11,8 @@ export function buildQueries(c) {
   return queries;
 }
 
-/** Alle Abfragen aller Kacheln. */
-export function allQueries(tiles) {
-  return tiles.flatMap((t) => t.competitions.flatMap(buildQueries));
-}
-
-/** Schluessel, unter dem eine Antwort in data/bvv.json liegt. */
-export const queryKey = (q) => JSON.stringify(q);
+/**
+ * Schluessel, unter dem eine Antwort in data/bvv.json liegt.
+ * Format: "<typ>|<wettbewerb>|<team>". Muss mit cron/update-data.php uebereinstimmen.
+ */
+export const queryKey = (q) => `${q.type}|${q.w}|${q.teams.join(",")}`;
