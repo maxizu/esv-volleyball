@@ -12,3 +12,4 @@
 
 .data-stamp { margin-top: 8px; font-size: .8em; color: #999; }
 .data-stamp:empty { display: none; }
+.data-hint { display: block; margin-top: 2px; font-size: .9em; color: #aaa; }

@@ -13,6 +13,8 @@ export const API = {
 export const SNAPSHOT = {
   url: "data/bvv.json",
   maxAgeDays: 14,
+  // Info im Footer. Muss zum Zeitplan in .github/workflows/update-data.yml passen.
+  scheduleText: "Mo\u2013Do alle 30 Min, Fr\u2013So alle 5 Min",
 };
 
 // Zeitraum fuer "Naechste Spiele" (Tage ab heute).

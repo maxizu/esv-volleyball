@@ -14,6 +14,10 @@ function showStamp({ source, fetchedAt, reason }) {
   const fmt = new Intl.DateTimeFormat("de-DE", { dateStyle: "medium", timeStyle: "short" });
   if (source === "snapshot") {
     el.textContent = `Daten zuletzt aktualisiert: ${fmt.format(fetchedAt)} Uhr`;
+    const hint = document.createElement("span");
+    hint.className = "data-hint";
+    hint.textContent = `Aktualisierung: ${SNAPSHOT.scheduleText}`;
+    el.append(hint);
   } else {
     const why =
       reason === "stale"

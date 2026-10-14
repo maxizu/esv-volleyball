@@ -3,6 +3,7 @@ name: Daten aktualisieren
 on:
   schedule:
     # Zeiten in UTC. Mo-Do alle 30 Min, Fr-So alle 5 Min (Spieltage).
+    # Bei Aenderung auch SNAPSHOT.scheduleText in js/config.js anpassen (Footer-Hinweis).
     # Minuten bewusst nicht auf :00, da GitHub dort stark ausgelastet ist.
     - cron: "7,37 * * * 1-4"
     - cron: "3-58/5 * * * 5,6,0"
