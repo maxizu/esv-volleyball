@@ -1,6 +1,6 @@
 // Baut die Kacheln aus der Konfiguration und liefert die Datenbloecke zurueck.
 
-import { HOME_MARKER } from "./config.js";
+import { buildQueries } from "./queries.js";
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -30,11 +30,7 @@ export function renderTiles(container, tiles) {
     for (const c of tile.competitions) {
       section.append(el("h3", null, c.name));
 
-      const base = { w: c.wettbewerb, teams: [c.team] };
-      const queries = [
-        { ...base, type: "spiele", teamfilter: [c.team], heimspielkennzeichen: HOME_MARKER },
-      ];
-      if (c.tabelle) queries.push({ ...base, type: "tabelle" });
+      const queries = buildQueries(c);
 
       for (const q of queries) {
         const b = block(q, tile, c);

@@ -9,3 +9,6 @@
 }
 .site-footer a { color: #555; text-decoration: none; margin: 0 .6em; }
 .site-footer a:hover { text-decoration: underline; }
+
+.data-stamp { margin-top: 8px; font-size: .8em; color: #999; }
+.data-stamp:empty { display: none; }

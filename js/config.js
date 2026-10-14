@@ -8,6 +8,13 @@ export const API = {
   timeoutMs: 30000,
 };
 
+// Vorab geholte Daten (von der GitHub Action stuendlich aktualisiert).
+// Ist die Datei aelter als maxAgeDays oder nicht nutzbar, ruft die Seite die API selbst.
+export const SNAPSHOT = {
+  url: "data/bvv.json",
+  maxAgeDays: 14,
+};
+
 // Zeitraum fuer "Naechste Spiele" (Tage ab heute).
 export const UPCOMING_DAYS = 10;
 
