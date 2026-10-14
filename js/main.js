@@ -1,4 +1,4 @@
-import { TILES } from "./config.js";
+import { TILES, SNAPSHOT } from "./config.js";
 import { renderTiles } from "./render.js";
 import { loadContents } from "./data.js";
 import { normalizeNames, trimResults } from "./names.js";
@@ -8,13 +8,19 @@ import { collectUpcoming, renderUpcoming, renderUpcomingFailure } from "./upcomi
 const { blocks } = renderTiles(document.getElementById("tiles"), TILES);
 const upcomingEl = document.getElementById("upcoming-list");
 
-function showStamp(source, fetchedAt) {
+function showStamp({ source, fetchedAt, reason }) {
   const el = document.getElementById("data-stamp");
   if (!el) return;
-  el.textContent =
-    source === "api"
-      ? "Live-Daten"
-      : "Stand: " + new Intl.DateTimeFormat("de-DE", { dateStyle: "medium", timeStyle: "short" }).format(fetchedAt) + " Uhr";
+  const fmt = new Intl.DateTimeFormat("de-DE", { dateStyle: "medium", timeStyle: "short" });
+  if (source === "snapshot") {
+    el.textContent = `Daten zuletzt aktualisiert: ${fmt.format(fetchedAt)} Uhr`;
+  } else {
+    const why =
+      reason === "stale"
+        ? `gespeicherte Daten \u00e4lter als ${SNAPSHOT.maxAgeDays} Tage`
+        : "gespeicherte Daten nicht verf\u00fcgbar";
+    el.textContent = `Daten live abgerufen: ${fmt.format(fetchedAt)} Uhr (${why})`;
+  }
 }
 
 function showFailure() {
@@ -27,7 +33,8 @@ function showFailure() {
 }
 
 try {
-  const { contents, source, fetchedAt } = await loadContents(blocks.map((b) => b.query));
+  const result = await loadContents(blocks.map((b) => b.query));
+  const { contents } = result;
   blocks.forEach(({ node }, i) => {
     if (contents[i] == null) return;
     node.innerHTML = contents[i];
@@ -37,7 +44,7 @@ try {
     linkGames(node);
   });
   renderUpcoming(upcomingEl, collectUpcoming(blocks));
-  showStamp(source, fetchedAt);
+  showStamp(result);
 } catch (err) {
   console.error("Abruf der BVV-Daten fehlgeschlagen:", err);
   showFailure();

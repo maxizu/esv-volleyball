@@ -14,19 +14,21 @@ async function fromSnapshot(queries) {
 
   const fetchedAt = new Date(snap.fetchedAt);
   if (!(Date.now() - fetchedAt <= SNAPSHOT.maxAgeDays * DAY)) {
-    throw new Error(`Daten aelter als ${SNAPSHOT.maxAgeDays} Tage`);
+    throw Object.assign(new Error(`Daten aelter als ${SNAPSHOT.maxAgeDays} Tage`), { kind: "stale" });
   }
   const contents = queries.map((q) => snap.blocks?.[queryKey(q)]);
   if (contents.some((c) => c == null)) throw new Error("Datei unvollstaendig (Konfiguration geaendert?)");
   return { contents, source: "snapshot", fetchedAt };
 }
 
-/** @returns {Promise<{contents: string[], source: "snapshot"|"api", fetchedAt: Date}>} */
+/** @returns {Promise<{contents: string[], source: "snapshot"|"api", fetchedAt: Date, reason?: "stale"|"missing"}>} */
 export async function loadContents(queries) {
+  let reason = "missing";
   try {
     return await fromSnapshot(queries);
   } catch (err) {
+    if (err.kind === "stale") reason = "stale";
     console.info("Vorab geholte Daten nicht nutzbar, rufe die API:", err.message);
   }
-  return { contents: await fetchBlocks(queries), source: "api", fetchedAt: new Date() };
+  return { contents: await fetchBlocks(queries), source: "api", fetchedAt: new Date(), reason };
 }
