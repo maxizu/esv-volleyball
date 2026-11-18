@@ -32,7 +32,7 @@ export function collectUpcoming(blocks, now = new Date()) {
 
   for (const { node, query, tile, competition } of blocks) {
     if (query.type !== "spiele") continue;
-    const wid = competitionId(node);
+    const wid = competitionId(node, competition);
     node.querySelectorAll("tr.spiel").forEach((row) => {
       const cell = (cls) => row.querySelector("td." + cls);
       const date = parseDate(cell("datum")?.textContent ?? "", cell("zeit")?.textContent ?? "", today);

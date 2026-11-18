@@ -39,13 +39,13 @@ function showFailure() {
 try {
   const result = await loadContents(blocks.map((b) => b.query));
   const { contents } = result;
-  blocks.forEach(({ node }, i) => {
+  blocks.forEach(({ node, competition }, i) => {
     if (contents[i] == null) return;
     node.innerHTML = contents[i];
     node.classList.add("vapiclass"); // Klasse, auf die vapi.css und data.css zielen
     normalizeNames(node);
     trimResults(node);
-    linkGames(node);
+    linkGames(node, competition);
   });
   renderUpcoming(upcomingEl, collectUpcoming(blocks));
   showStamp(result);
