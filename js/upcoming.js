@@ -1,7 +1,8 @@
 // "Naechste Spiele": liest die bereits geladenen Spielplaene aus (kein zusaetzlicher Request)
 // und listet alle Spiele der naechsten Tage.
 
-import { UPCOMING_DAYS, HOME_MARKER, GAME_URL } from "./config.js";
+import { UPCOMING_DAYS, HOME_MARKER } from "./config.js";
+import { competitionId, gameUrl } from "./links.js";
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -31,6 +32,7 @@ export function collectUpcoming(blocks, now = new Date()) {
 
   for (const { node, query, tile, competition } of blocks) {
     if (query.type !== "spiele") continue;
+    const wid = competitionId(node);
     node.querySelectorAll("tr.spiel").forEach((row) => {
       const cell = (cls) => row.querySelector("td." + cls);
       const date = parseDate(cell("datum")?.textContent ?? "", cell("zeit")?.textContent ?? "", today);
@@ -44,6 +46,7 @@ export function collectUpcoming(blocks, now = new Date()) {
       const b = cell("teamb");
       games.push({
         id: row.getAttribute("data-vapi-spielid"),
+        url: gameUrl(wid, row.getAttribute("data-vapi-spielid")),
         date,
         tile,
         competition: competition.name,
@@ -84,10 +87,10 @@ export function renderUpcoming(container, games) {
 
   for (const g of games) {
     const item = el("li", "match " + g.tile.group);
-    // Ganze Zeile ist ein Link zur Spielseite (nur wenn die API eine Spiel-ID liefert)
-    const row = g.id ? el("a", "row") : el("span", "row");
-    if (g.id) {
-      row.href = GAME_URL + g.id;
+    // Ganze Zeile ist ein Link zur Spielseite (nur wenn Spiel- und Wettbewerbs-ID bekannt sind)
+    const row = g.url ? el("a", "row") : el("span", "row");
+    if (g.url) {
+      row.href = g.url;
       row.target = "_blank";
       row.rel = "noopener";
     }

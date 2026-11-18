@@ -20,6 +20,6 @@ export const SNAPSHOT = {
 // Zeitraum fuer "Naechste Spiele" (Tage ab heute).
 export const UPCOMING_DAYS = 10;
 
-// Seite pro Spiel auf volleyball.bayern. Die Spiel-ID kommt aus der API (data-vapi-spielid);
-// der Pfad davor (Kategorie/Bezirk) ist fuer die Anzeige egal, die Seite findet das Spiel ueber die ID.
-export const GAME_URL = "https://volleyball.bayern/ergebnisse/erwachsene/oberbayern/spiel-";
+// Seite pro Spiel auf volleyball.bayern: .../wettbewerb-<ID>/spiel-<ID>.
+// Spiel-ID: data-vapi-spielid; numerische Wettbewerbs-ID: aus dem "Quelle: BVV"-Link des Blocks.
+export const GAME_URL = "https://obb.volleyball.bayern/ergebnisse/erwachsene/oberbayern/";
